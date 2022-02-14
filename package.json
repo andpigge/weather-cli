@@ -5,7 +5,9 @@
   "description": "CLI for getting weather",
   "main": "index.js",
   "bin": "./index.js",
-  "man": ["./README.md"],
+  "man": [
+    "./README.md"
+  ],
   "engines": {
     "node": "<14"
   },
@@ -27,5 +29,8 @@
   "bugs": {
     "url": "",
     "email": "rustamaaaa@bk.ru"
+  },
+  "dependencies": {
+    "axios": "^0.26.0"
   }
 }
