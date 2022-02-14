@@ -30,6 +30,8 @@
     "email": "rustamaaaa@bk.ru"
   },
   "dependencies": {
-    "axios": "^0.26.0"
+    "axios": "^0.26.0",
+    "chalk": "^5.0.0",
+    "dedent-js": "^1.0.1"
   }
 }
