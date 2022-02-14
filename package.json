@@ -1,13 +1,12 @@
 {
   "name": "weather-cli",
   "version": "1.0.0",
-  "private": false,
   "description": "CLI for getting weather",
-  "main": "index.js",
-  "bin": "./index.js",
-  "man": [
-    "./README.md"
-  ],
+  "main": "weather.js",
+  "bin": {
+    "weather": "weather.js"
+  },
+  "type": "module",
   "engines": {
     "node": "<14"
   },
