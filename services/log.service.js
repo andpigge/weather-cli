@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import dedent from 'dedent-js';
-const { bgRed, bgGreen, bgCyan, yellowBright } = chalk;
+const { bgRed, bgGreen, bgCyan, yellowBright, blueBright, black } = chalk;
 
 const printError = (err) => {
 	const str = `${bgRed(" Error: ")} ${err}`;
@@ -8,7 +8,7 @@ const printError = (err) => {
 };
 
 const printSuccess = (mes) => {
-  const str = `${bgGreen(" Success: ")} ${mes}`;
+  const str = `${black.bgGreen(" Success: ")} ${blueBright(mes)}`;
   console.log(str);
 };
 
