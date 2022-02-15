@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import dedent from 'dedent-js';
-const { bgRed, bgGreen, bgCyan, bgYellow, yellowBright, blueBright, black } = chalk;
+const { bgRed, bgCyan, yellowBright, blueBright, black, yellow } = chalk;
 
 const printError = (err) => {
 	const str = `${bgRed(" Error: ")} ${err}`;
@@ -25,11 +25,15 @@ const printHelp = () => {
 
 const printWeather = (res, icon) => {
   const str = dedent`
-		\n${black.bgYellow(" Weather: ")} Погода в городе ${res.name}
-		${icon}  ${res.weather[0].description}
-		Температура: ${res.main.temp}°C. Ощущается как: ${res.main.feels_like}°C
-		Влажность воздуха: ${res.main.humidity}%
-		Скорость ветра: ${res.wind.speed} км.ч
+		\n${black.bgYellow(" Weather: ")} ${blueBright("Погода в городе:")} ${yellow(
+    res.name
+  )}
+		${icon}  ${yellow(res.weather[0].description)}
+		${blueBright("Температура:")} ${yellow(res.main.temp + " °C.")} ${blueBright(
+    "Ощущается как:"
+  )} ${yellow(res.main.feels_like + " °C")}
+		${blueBright("Влажность воздуха:")} ${yellow(res.main.humidity + " %")}
+		${blueBright("Скорость ветра:")} ${yellow(res.wind.speed + " км.ч")}
 	`;
   console.log(str);
 };
