@@ -17,21 +17,37 @@ const saveToken = async (token) => {
 	}
 };
 
+const getForecast = async () => {
+	try {
+		const weather = await getWeather(process.env.CITY);
+    console.log(weather); //* Красивый вывод погоды
+	} catch(e) {
+		if (e?.response?.status === 404) {
+			printError('Неверно указан город');
+			return;
+		}
+		if (e?.response?.status === 401) {
+			printError("Неверно указан токен");
+			return;
+    }
+		printError(e.message);
+	}
+};
+
 const initCli = () => {
 	const args = getArgs(process.argv);
-	console.log(process.env);
 	if (args.h) {
 		// Вывод help
 		printHelp();
   }
 	if (args.s) {
-    // Сохранить город
+    //* Сохранить город
   }
 	if (args.t) {
     // Сохранить токен
 		return saveToken(args.t);
   }
 	// Вывести погоду
-	getWeather("moscow");
+	getForecast();
 };
 initCli();

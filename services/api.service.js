@@ -5,8 +5,7 @@ const getWeather = async (city) => {
 	const token = process.env.TOKEN ?? await getKeyValue(TOKEN_DICTIONARY.token);
 	if (!token) {
 		throw new Error(
-			`Токен недействителен.\n
-			Сохраните ваш токен: -t [API_KEY]`
+			'Токен недействителен. Сохраните ваш токен: -t [API_KEY]'
 		);
   }
 	const { data } = await axios.get(
