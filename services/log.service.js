@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import dedent from 'dedent-js';
-const { bgRed, bgGreen, bgCyan, yellowBright, blueBright, black } = chalk;
+const { bgRed, bgGreen, bgCyan, bgYellow, yellowBright, blueBright, black } = chalk;
 
 const printError = (err) => {
 	const str = `${bgRed(" Error: ")} ${err}`;
@@ -16,11 +16,22 @@ const printHelp = () => {
   const str = dedent`
 		\n${bgCyan(" Help: ")}
 		${yellowBright("Без параметров:")} вывод погоды;
-		${yellowBright("-s [city]:")} для установки городы;
+		${yellowBright("-s [CITY]:")} для установки городы;
 		${yellowBright("-h:")} для вывода помощи;
-		${yellowBright("-t [api_key]:")} для сохранения токена;
+		${yellowBright("-t [API_KEY]:")} для сохранения токена;
 	`;
   console.log(str);
 };
 
-export { printError, printSuccess, printHelp };
+const printWeather = (res, icon) => {
+  const str = dedent`
+		\n${black.bgYellow(" Weather: ")} Погода в городе ${res.name}
+		${icon}  ${res.weather[0].description}
+		Температура: ${res.main.temp}°C. Ощущается как: ${res.main.feels_like}°C
+		Влажность воздуха: ${res.main.humidity}%
+		Скорость ветра: ${res.wind.speed} км.ч
+	`;
+  console.log(str);
+};
+
+export { printError, printSuccess, printHelp, printWeather };
