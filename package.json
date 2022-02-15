@@ -1,5 +1,5 @@
 {
-  "name": "weather-cli",
+  "name": "weather-cli-rustam",
   "version": "1.0.0",
   "description": "CLI for getting weather",
   "main": "weather.js",
@@ -11,22 +11,23 @@
     "node": "<14"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node weather.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "cli",
-    "weather"
+    "weather",
+    "Rustam"
   ],
   "author": "Rustam Rachimov",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://hh.ru/resume/dc361442ff07787a170039ed1f314a4e42476c",
   "repository": {
     "type": "git",
     "url": "https://github.com/andpigge"
   },
   "bugs": {
-    "url": "",
+    "url": "https://vk.com/uie_n",
     "email": "rustamaaaa@bk.ru"
   },
   "dependencies": {
